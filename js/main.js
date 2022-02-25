@@ -77,8 +77,16 @@ const school = {
   skills: ["HTML", "CSS", "JavaScript", "Vue.js", "PHP", "Laravel"],
   createSentense() {
     // 処理を記述
-    console.log(`${this.name} は ${this.month}ヶ月で ${this.skills}を学ぶ事が出来ます`);
-  }
+    let learn;
+    this.skills.forEach((skill, index) => {
+      if (index = 0) {
+        learn = skill;
+      } else {
+        learn = `${learn}と${skill}`;
+      }
+    });
+    return `${this.name}は${this.month}ヶ月で${learn}を学ぶ事が出来ます。`;
+  },
 };
 
 console.log(school.createSentense());
